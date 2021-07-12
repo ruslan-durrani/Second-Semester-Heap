@@ -1,0 +1,18 @@
+import java.util.*;
+public class Q5 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String string = input.nextLine();
+        reverseDisplay(string);
+    }
+    public static void reverseDisplay(String value){
+        if(value.length()==0){
+            return ;
+        }
+        else{
+            System.out.print(value.charAt(value.length()-1));
+            reverseDisplay(value.substring(0,value.length()-1));
+        }
+    }
+}

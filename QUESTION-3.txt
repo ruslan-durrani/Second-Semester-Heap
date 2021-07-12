@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+public class Q3{
+    public static void main(String[] args) throws IOException {
+        File myfile = new File(args[0]);
+        int characterCounter = 0;
+        int wordCounter = 0;
+        int lineCounter = 0;
+        Scanner reader = new Scanner(myfile);
+        while(reader.hasNextLine()){
+            String[] totalWords = reader.nextLine().split(" ");
+            lineCounter ++;
+            wordCounter += totalWords.length;
+            for (int i = 0; i < totalWords.length ; i++) {
+                 characterCounter += totalWords[i].trim().length();
+            }
+        }
+        System.out.printf("Number of lines are: %d.\n",lineCounter);
+        System.out.printf("Number of words are: %d.\n",wordCounter);
+        System.out.printf("Number of characters are: %d.\n",characterCounter);
+    }
+}

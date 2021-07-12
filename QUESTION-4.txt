@@ -1,0 +1,14 @@
+import java.util.*;
+public class Q4 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter two numbers: ");
+        int x = input.nextInt();
+        int y = input.nextInt();
+        System.out.printf("The GCD for %d and %d is : %d",x,y,gcd(x,y));
+    }
+    private static int gcd(int m, int n) {
+        if (m % n == 0) return n;
+        else return gcd(n, m % n);
+    }
+}

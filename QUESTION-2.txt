@@ -1,0 +1,23 @@
+import java.util.*;
+import java.io.*;
+public class Q2{
+    public static void main(String[] args) throws IOException {
+        File file = new File(args[1]);
+        String removedString = "";
+        Scanner sc = new Scanner(file);
+        boolean check = false;
+        while(sc.hasNextLine()){
+            String line = sc.nextLine();
+            if(line.contains(args[0])){
+                removedString += line.replaceAll( args[0],"")+"\n";
+                check = true;
+            }
+            else removedString += line+"\n";
+        }
+        FileWriter writer = new FileWriter(file);
+        writer.write(removedString);
+        writer.close();
+        if(check)
+            System.out.println("Removed");
+    }
+}
